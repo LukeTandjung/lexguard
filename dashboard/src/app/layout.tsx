@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cabin, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { AlertProvider } from "./context/alert-context";
 
 const cabin = Cabin({
   variable: "--font-cabin",
@@ -27,7 +28,9 @@ export default function RootLayout({
       <body
         className={`${cabin.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <AlertProvider>
+          {children}
+        </AlertProvider>
       </body>
     </html>
   );
