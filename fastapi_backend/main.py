@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from classes.GeminiModel import GeminiModel
+from models.PromptRequest import PromptRequest
+from models.PromptResponse import PromptResponse
 
 app = FastAPI(
     title="Lexguard API backend",
@@ -7,7 +9,8 @@ app = FastAPI(
     version="1.0.0"
 )
 
-@app.get("/")
-async def root():
+@app.get("/review", response_model=PromptResponse)
+async def review_email(request: PromptRequest):
     model = GeminiModel()
-    return model.return_key()
+    response = await model.review_email(request)
+    return response

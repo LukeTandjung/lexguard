@@ -69,9 +69,3 @@ Here is some more background on why these rules exist:
 5. Assume every document will become public. Assume every document you generate, including email and chats,could be made public and scrutinised by our competitors and antitrust regulators. We’re often legally required to produce internal business records, including email and stuff that was intended for “internal use only.” And we’re pretty good at finding things, even if a person has deleted it. So please, be careful what you write, and don’t write anything that could be misconstrued.
 
 6. Collusion is illegal under competition law. Naturally sometimes we bump into others in our industry at events, hearings, regulatory or policy review meetings, etc. But we must never collude with our competitors, nor accidentally give the impression that we might.
-
-
-
-Input email:
-
-"We absolutely do care about this because we need wifi data collection in order to maintain and improve our wifi location service (especially after having Street View wifi data collection discontinued). Our wifi location database is extremely valuable to Google because it is not a competitive market, even worse than the map data market. Skyhook is the only other viable alternative and there would be incredible risk to depend on them."
