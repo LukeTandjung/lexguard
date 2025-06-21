@@ -20,7 +20,7 @@ export default function Dashboard() {
 
   return (
     <div className='h-screen flex flex-col'>
-        <Navbar showHamburger={true} onHamburgerClick={() => router.push('/')} />
+        <Navbar />
         <main className='grid grid-cols-12 px-10 gap-10 bg-light h-[calc(100vh-120px)]'>
             <div className='col-start-2 col-span-4 bg-white p-8 rounded-xl my-5 flex flex-col overflow-hidden'>
                 <div className='text-4xl font-semibold tracking-wide font-cabin text-dark mb-5'>Alerts</div>

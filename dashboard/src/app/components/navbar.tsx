@@ -31,8 +31,13 @@ export default function Navbar({ showHamburger = false, onHamburgerClick }: Navb
             ← Back to Dashboard
           </button>
         )}
-        <Image src={`/icon-white.png`} alt='icon' width={50} height={50}/>
-        <div className="text-4xl font-bold tracking-wide italic font-cabin text-white">LexGuard</div>
+        <button 
+          onClick={() => router.push('/')}
+          className="flex items-center gap-5 hover:opacity-80 transition-opacity"
+        >
+          <Image src={`/icon-white.png`} alt='icon' width={50} height={50}/>
+          <div className="text-4xl font-bold tracking-wide italic font-cabin text-white">LexGuard</div>
+        </button>
       </div>
     </nav>
   )
