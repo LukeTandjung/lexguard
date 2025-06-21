@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+  --font-cabin: "Cabin", "sans-serif"; 
+  --color-primary: #0167F8;
+  --color-light: #E0F0FD;
+  --color-dark: #021452;
+}
