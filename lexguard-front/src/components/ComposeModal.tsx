@@ -1,4 +1,6 @@
 import { useState, useRef } from 'react'
+import { collection, addDoc, Timestamp } from 'firebase/firestore'
+import { db } from '../../firebase'
 
 interface ComposeModalProps {
   isVisible: boolean
@@ -33,6 +35,17 @@ const ComposeModal = ({ isVisible, onClose }: ComposeModalProps) => {
 
   const handleSend = () => {
     console.log('Sending email:', { to, subject, message })
+    const alertsCollection = collection(db, 'alerts')
+    addDoc(alertsCollection, {
+      sender: 'michael.yin@gmail.com',
+      receiver: to,
+      status: 'sent',
+      subject: subject,
+      title: subject,
+      time: Timestamp.now(),
+      message: message,
+      violation: 'none'
+    })
     onClose()
   }
 
