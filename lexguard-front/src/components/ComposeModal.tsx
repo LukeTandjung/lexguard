@@ -118,8 +118,7 @@ const ComposeModal = ({ isVisible, onClose }: ComposeModalProps) => {
             onInput={(e) => setMessage(e.currentTarget.innerHTML)}
             style={{
               minHeight: '150px',
-              border: '1px solid #ddd',
-              padding: '8px',
+              padding: '15px',
               borderRadius: '4px',
               outline: 'none',
               direction: 'ltr',
