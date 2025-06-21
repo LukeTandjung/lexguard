@@ -13,7 +13,15 @@ The reason field should contain a list of reasons why you thought that the email
 - control: Language which indicates that our firm somehow controls other market actors (such as by locking them in or tying products together)
 - dominance: Language which indicates that our firm has market power or dominates the market.
 
-Example input: "Marketing a non-compatible device is literally an act of war in Android-ville."
+Example input:
+{
+    "sender": "steve@apple.com",
+    "receiver": "bruce@adobe.com",
+    "session_id": "XXXX",
+    "title": "Android non-compat",
+    "content": "Marketing a non-compatible device is literally an act of war in Android-ville."
+}
+
 Example output:
 {
     has_issue: true,
@@ -49,16 +57,28 @@ Here is some more background on why these rules exist:
 
 Finally, here are some more examples of good and bad phrases to use in emails:
 
-| Bad        | Good                                                                   |
-| :--------- | :--------------------------------------------------------------------- |
-| "Market"   | "Industry," "Space," "Area," or simply delete the word "market" (e.g., "In the US") |
-| "Market share" | "Revenue share" (use target’s revenues)                            |
-| "Dominant" | "The leader"                                                           |
+| Bad | Good |
+| :--- | :--- |
+| "Market" | "Industry," "Space," "Area," or omit the word (e.g., "In the US") |
+| "Market share" | "Revenue share" (using the target's revenues) |
+| "Dominant" | "The leader" |
+| "Barriers to entry" | "Challenges" |
+| "Unmatched," "unsurpassed" | "Valuable" |
+| "Unique" | "New," "Alternative" |
+| "Achieve massive scale" | e.g., "Increase user numbers to lower costs" |
+| "Network effects" | "Valuable to users" |
 
-Bad: “Target is the header in the _______ market with a 65% market share”
-Good: “Target is a leader in _____ with $XXX in revenues"
+**Example 1:**
+
+* **Bad:** “Target is the leader in the _______ market with a 65% market share.”
+* **Good:** “Target is a leader in _______ with \$XXX in revenues."
+
+**Example 2:**
+
+* **Bad:** “Target has created a unique and unmatched product with significant network effects that create high barriers to entry.”
+* **Good:** “Target’s product provides a new option that consumers are finding increasingly valuable.”
 
 Pay very careful attention to the above instructions. Err on the side of caution if unsure.
 
 Input email:
-"We absolutely do care about this because we need wifi data collection in order to maintain and improve our wifi location service (especially after having Street View wifi data collection discontinued). Our wifi location database is extremely valuable to Google because it is not a competitive market, even worse than the map data market. Skyhook is the only other viable alternative and there would be incredible risk to depend on them."
+"I tend to have a high bar for M&A considerations. All the research I have seen is that most deals fail to create the value expected by the acquirer. My instinct is that many deals are done because the CEO is frustrated that the business is not where they want it to be, they would rather do something than nothing, and M&A seems like the biggest lever they have. This is a bad reason to do a deal. So for these two ideas specifically, I would ask you to find a compelling elucidation of what you are trying to accomplish. 1) neutralize a potential competitor? Bad reason in my book since someone else will spring up immediately in their place. There will always be consumers who are instinctively negative about the industry leaders and want to work with the upstarts. We will always have upstarts nipping at our heels. We have to win against competitors by having better products. 2) acquire talent? Seems expensive for this. 3) integrate their products with ours in order to improve our service? This can be a very compelling reason, if you have a clear vision for how the implementation would be great for users and that we cannot do the product improvements ourselves in a reasonable timeframe. 4) other? Happy to discuss further."
