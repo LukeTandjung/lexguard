@@ -60,6 +60,6 @@ class GeminiModel:
             # Fallback response if parsing fails
             return PromptResponse(
                 has_issue=True,
-                reason="error",
+                reason=["error"],
                 suggested_email="Error parsing model response: " + str(e)
             )
