@@ -1,11 +1,15 @@
+import { Timestamp } from "firebase/firestore";
+
 export interface Alert {
-    id: string;
-    time: string;
-    email: string;
+    id?: string;
+    time: Timestamp;
+    sender: string;
+    receiver: string;
     name: string;
     violation: string;
-    state: string;
-    flagged_messages: string[];
+    status: string;
+    title: string;
+    content: string[];
 }
 
 export interface AlertList {

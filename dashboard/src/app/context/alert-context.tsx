@@ -1,3 +1,5 @@
+"use client"
+
 import { createContext, useEffect, useState } from "react";
 import { AlertList, Alert } from "../types/types";
 import { FIREBASE_DB } from "../../../firebase.config";
