@@ -25,13 +25,13 @@ export default function Dashboard() {
           </div>
         </nav>
         <main className='grid grid-cols-12 px-10 gap-10 bg-light h-[calc(100vh-120px)]'>
-            <div className='col-start-2 col-span-4 bg-white p-8 rounded-3xl my-5 flex flex-col overflow-hidden'>
+            <div className='col-start-2 col-span-4 bg-white p-8 rounded-xl my-5 flex flex-col overflow-hidden'>
                 <div className='text-4xl font-semibold tracking-wide font-cabin text-dark mb-5'>Alerts</div>
                 <div className='flex-1 overflow-y-auto'>
                     <div className='grid grid-cols-1 divide-y divide-gray-200'>
                       {sortedAlerts.length > 0 ? (
                         sortedAlerts.map((alert) => (
-                          <button key={alert.id} onClick={() => setSelectAlert(alert)} className="w-full text-left">
+                          <button key={alert.id} onClick={() => setSelectAlert(alert)} className="w-full text-left cursor-pointer">
                             <AlertCard alert={alert} />
                           </button>
                         ))
@@ -43,7 +43,7 @@ export default function Dashboard() {
                     </div>
                 </div>
             </div>
-            <div className='col-start-6 col-span-6 bg-white p-8 rounded-3xl my-5 flex flex-col overflow-hidden'>
+            <div className='col-start-6 col-span-6 bg-white p-8 rounded-xl my-5 flex flex-col overflow-hidden'>
                 <div className='text-4xl font-semibold tracking-wide font-cabin text-dark mb-5'>Email Flagged</div>
                 <div className='flex-1 overflow-y-auto'>
                     <ReportCard alert={selectAlert} />
