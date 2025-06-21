@@ -1,0 +1,8 @@
+"We absolutely do care about this because we need wifi data collection in order to maintain and improve our wifi location service (especially after having Street View wifi data collection discontinued). Our wifi location database is extremely valuable to Google because it is not a competitive market, even worse than the map data market. Skyhook is the only other viable alternative and there would be incredible risk to depend on them." 
+
+"Marketing a non-compatible device is literally an act of war in Android-ville." 
+
+"Every time I see an Android device shipping with Bing I die a little."
+
+"The exclusive across all the android search entry points is very strategic to mobile search, the nightmare scenario is for [Microsoft] (or others) to come and scoop us by simply paying more, we know they have shown an appetite to do this in the past and will likely do so again to gain traction […]. This contract is an exchange. Without the exclusivity, we are not "getting" anything. Without an exclusive search deal, a large carrier can and will ship alternatives to Google (as seen with Verizon, AT&T, and America Movil)." 
+
