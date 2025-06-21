@@ -45,6 +45,10 @@ const ComposeModal = ({ isVisible, onClose }: ComposeModalProps) => {
       const data = await response.json()
       setReviewResponse(data)
 
+      if (!data.has_issue) {
+        handleSendAnyway()
+      }
+
     } catch (error) {
       console.error('Error reviewing email:', error)
     } finally {
@@ -63,7 +67,7 @@ const ComposeModal = ({ isVisible, onClose }: ComposeModalProps) => {
       title: subject,
       time: Timestamp.now(),
       message: reviewResponse?.suggested_email || message,
-      violation: reviewResponse?.reason
+      violation: reviewResponse?.reason || []
     })
     setTo('')
     setSubject('')
@@ -194,15 +198,6 @@ const ComposeModal = ({ isVisible, onClose }: ComposeModalProps) => {
                   </>
                 ) : (
                   <>
-                    <p className="review-success">No issues found with your email.</p>
-                    <div className="review-actions">
-                      <button 
-                        onClick={handleSendAnyway}
-                        className="review-send-btn"
-                      >
-                        Send Email
-                      </button>
-                    </div>
                   </>
                 )}
               </div>
