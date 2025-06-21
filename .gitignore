@@ -1,6 +1,4 @@
 .direnv/
-.envrc
-flake.lock
 flake.nix
 fastapi_backend/venv/
 fastapi_backend/.env

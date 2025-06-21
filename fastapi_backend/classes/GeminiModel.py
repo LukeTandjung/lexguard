@@ -23,12 +23,12 @@ class GeminiModel:
         {self.system_prompt}
 
         Input email:
-        {request.email_content}
+        {request.content}
         """
         response = self.model.generate_content(
             prompt,
             generation_config={
-                "temperature": request.temperature,
+                "temperature": 0.1,
                 "top_p": 0.8
             }
         )
@@ -42,5 +42,6 @@ class GeminiModel:
             # Fallback response if parsing fails
             return PromptResponse(
                 has_issue=True,
+                reason="error",
                 suggested_email="Error parsing model response: " + str(e)
             )
