@@ -7,6 +7,13 @@ interface ReportCardProps {
   alert: Alert | null;
 }
 
+const DESCRIPTION = {
+  "aggressive_language": "Language which is war-like or about harming competitors",
+  "cartel": "Language which is indicative of price fixing or cartelisation",
+  "control": "Language which indicates that our firm somehow controls other market actors (such as by locking them in or tying products together)", 
+  "dominance": "Language which indicates that our firm has market power or dominates the market"
+}
+
 export default function ReportCard({ alert }: ReportCardProps) {
   if (!alert) {
     return (
@@ -23,8 +30,9 @@ export default function ReportCard({ alert }: ReportCardProps) {
           <div className="font-bold">Time: <span className="font-normal">{alert.time.toDate().toLocaleString()}</span></div>
           <div className="font-bold">Sender: <span className="font-normal">{alert.sender}</span></div>
           <div className="font-bold">Receiver: <span className="font-normal">{alert.receiver}</span></div>
-          <div className="font-bold">Category: <span className="font-normal">{alert.violation[0] || "No Issue"}</span></div>
           <div className="font-bold">Status: <span className="font-normal">{alert.status}</span></div>
+          <div className="font-bold">Category: <span className="font-normal">{alert.violation[0]?.toUpperCase() || "No Issue"}</span></div>
+          <div className="font-bold">Description: <span className="font-normal">{DESCRIPTION[alert.violation[0] as keyof typeof DESCRIPTION] || "None"}</span></div>
           <div className="font-bold">Subject: <span className="font-normal">{alert.subject}</span></div>
         </div>
         <div className="flex flex-col gap-y-2 py-2 col-span-1">

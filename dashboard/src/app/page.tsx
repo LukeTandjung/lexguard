@@ -12,9 +12,11 @@ export default function Dashboard() {
   const [selectAlert, setSelectAlert] = useState<Alert | null>(null)
   const { alerts } = useContext(AlertContext)
 
-  const sortedAlerts = [...alerts].sort((a, b) => {
-    return b.time.toDate().getTime() - a.time.toDate().getTime()
-  })
+  const sortedAlerts = [...alerts]
+    .filter(alert => alert.violation && alert.violation.length > 0)
+    .sort((a, b) => {
+      return b.time.toDate().getTime() - a.time.toDate().getTime()
+    })
 
   return (
     <div className='h-screen flex flex-col'>
