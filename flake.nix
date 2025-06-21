@@ -10,12 +10,16 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
+        gdk = pkgs.google-cloud-sdk.withExtraComponents( with pkgs.google-cloud-sdk.components; [
+          gke-gcloud-auth-plugin
+        ]);
       in
       {
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             python312
             nodejs_22
+            gdk
           ];
 
           env.LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
