@@ -1,3 +1,5 @@
+import gmailLogo from '../assets/logo_gmail_lockup_default_1x_r5.webp'
+
 const Header = () => {
   return (
     <header className="gmail-header">
@@ -5,7 +7,7 @@ const Header = () => {
         <span>☰</span>
       </button>
       <div className="gmail-logo">
-        <span style={{ fontSize: '20px', fontWeight: 'bold', color: '#ea4335' }}>Gmail</span>
+        <img src={gmailLogo} alt="Gmail" />
       </div>
       <div className="search-container">
         <input
