@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from dotenv import load_dotenv
 from classes.GeminiModel import GeminiModel
 from models.PromptRequest import PromptRequest
 from models.PromptResponse import PromptResponse
@@ -9,7 +10,9 @@ app = FastAPI(
     version="1.0.0"
 )
 
-@app.get("/review", response_model=PromptResponse)
+load_dotenv()
+
+@app.post("/review", response_model=PromptResponse)
 async def review_email(request: PromptRequest):
     model = GeminiModel()
     response = await model.review_email(request)
