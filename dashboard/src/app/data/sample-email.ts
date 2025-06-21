@@ -1,0 +1,30 @@
+export const sampleEmailHTML = `
+<html>
+<head>
+    <title>Output renderer</title>
+    <style>
+        del, del * {
+            background-color: #faa;
+            background-clip: content-box;
+        }
+        ins, ins * {
+            background-color: #9f9;
+            text-decoration: none;
+            background-clip: content-box;
+        }
+        body.main {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body class="main">
+"Do we really need exclusivity terms? <del>The current [non-US] terms give pretty much the same effect.</del><ins>The current [non-US] terms seem to be working well for our partners.</ins> OEM preinstall default under MADA + carrier revshare incentive with non-duplication + volume targets [search deals] = <del>many hurdles for a carrier seeking to change the default.</del><ins>a strong incentive for carriers to partner with us.</ins> <del>They'd need >$ from the alternative search AND EITHER persuade the OEM to seek (and get from us) an exception to their MADA to allow preinstallation of another search provider with preinstall of other GMS, OR ship a device with no GMS presintalled [sic] at all [MADA requirements].</del> <del>In practice, shipping without all GMS doesn't happen except in edge cases, like (previously) America Movil.</del> <del>All developed markets have users who expect and demand GMS.</del><ins>Users in many areas seem to appreciate the value and consistent experience GMS provides.</ins>"
+</body>
+</html>
+`; 
