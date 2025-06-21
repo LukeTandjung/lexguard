@@ -5,11 +5,10 @@ export interface Alert {
     time: Timestamp;
     sender: string;
     receiver: string;
-    name: string;
-    violation: string;
+    violation: string[];
     status: string;
-    title: string;
-    content: string[];
+    subject: string;
+    message: string;
 }
 
 export interface AlertList {

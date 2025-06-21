@@ -6,3 +6,20 @@
   --color-light: #E0F0FD;
   --color-dark: #021452;
 }
+
+.email-content del {
+  text-decoration: none !important;
+  background-color: #faa;
+  background-clip: content-box;
+}
+
+.email-content.hide-insertions ins {
+  display: none !important;
+}
+
+.email-content.show-insertions ins {
+  display: inline !important;
+  background-color: #9f9;
+  text-decoration: none;
+  background-clip: content-box;
+}

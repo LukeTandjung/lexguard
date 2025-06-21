@@ -1,24 +1,16 @@
 import React from 'react'
 import { Alert } from '../types/types'
-import { Timestamp } from 'firebase/firestore'
 
-export default function AlertCard() {
+interface AlertCardProps {
+  alert: Alert;
+}
 
-  let alerttest = {
-    id: "1",
-    time: Timestamp.fromDate(new Date()),
-    sender: "test@test.com",
-    receiver: "test@test.com",
-    name: "Test",
-    violation: "Test",
-    status: "Test",
-  }
-
+export default function AlertCard({ alert }: AlertCardProps) {
   return (
     <div>
-      <div className="flex flex-row items-center px-4 py-2 hover:bg-gray-100 rounded-lg">
+      <div className="flex flex-row items-center px-4 py-2 hover:bg-gray-100 hover:scale-105 transition-all duration-300 rounded-lg m-2">
         <div className="font-cabin text-lg text-dark">
-          {alerttest.time.toDate().toLocaleString()} - {alerttest.sender}
+          {alert.time.toDate().toLocaleString()} - {alert.sender}
         </div>
       </div>
     </div>
