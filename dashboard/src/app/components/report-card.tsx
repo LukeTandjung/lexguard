@@ -1,6 +1,7 @@
 import React from 'react'
 import { Alert } from '../types/types'
 import MessageCard from './message-card';
+import Image from 'next/image';
 
 interface ReportCardProps {
   alert: Alert | null;
@@ -17,18 +18,32 @@ export default function ReportCard({ alert }: ReportCardProps) {
 
   return (
     <div className="flex flex-col h-full">
-      <div className="flex flex-1 flex-col gap-4 py-2">
-        <div className="font-cabin text-lg font-bold">Time: <span className="font-normal">{alert.time.toDate().toLocaleString()}</span></div>
-        <div className="font-cabin text-lg font-bold">Sender: <span className="font-normal">{alert.sender}</span></div>
-        <div className="font-cabin text-lg font-bold">Receiver: <span className="font-normal">{alert.receiver}</span></div>
-        <div className="font-cabin text-lg font-bold">Category: <span className="font-normal">{alert.violation}</span></div>
-        <div className="font-cabin text-lg font-bold">Status: <span className="font-normal">{alert.status}</span></div>
-        <div className="font-cabin text-lg font-bold">Subject: <span className="font-normal">{alert.subject}</span></div>
-        <div className="font-cabin text-lg font-bold">Email Content:
-          <MessageCard message={alert.message} />
+      <div className="grid grid-cols-2">
+        <div className="col-span-1 flex flex-1 flex-col gap-4 py-2 font-cabin text-dark text-lg">
+          <div className="font-bold">Time: <span className="font-normal">{alert.time.toDate().toLocaleString()}</span></div>
+          <div className="font-bold">Sender: <span className="font-normal">{alert.sender}</span></div>
+          <div className="font-bold">Receiver: <span className="font-normal">{alert.receiver}</span></div>
+          <div className="font-bold">Category: <span className="font-normal">{alert.violation[0] || "No Issue"}</span></div>
+          <div className="font-bold">Status: <span className="font-normal">{alert.status}</span></div>
+          <div className="font-bold">Subject: <span className="font-normal">{alert.subject}</span></div>
         </div>
-
+        <div className="flex flex-col gap-y-2 py-2 col-span-1">
+          <div className="font-bold text-lg font-cabin text-dark">Actions:</div>
+          <div className="flex">
+            <button className="flex flex-row items-center gap-x-2 cursor-pointer border-3 border-primary text-dark px-4 py-2 rounded-md hover:text-white hover:bg-blue-600 transition-all duration-300">
+              <div className="text-start font-cabin text-md">Schedule Meeting with {alert.sender}</div>
+              <Image src="/calendar.png" alt="calendar" width={30} height={30} className="w-10 h-10 p-1 bg-white rounded-sm" />
+            </button>
+          </div>
+        </div>
       </div>
+      
+      <div className="font-bold font-cabin text-lg text-dark flex flex-col gap-y-2 py-2">
+          <div>Email Content:</div>
+          <div className="text-sm">
+            <MessageCard message={alert.message} />
+          </div>
+        </div>
     </div>
   )
 }

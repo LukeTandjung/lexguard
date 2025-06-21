@@ -5,7 +5,7 @@ export interface Alert {
     time: Timestamp;
     sender: string;
     receiver: string;
-    violation: string;
+    violation: string[];
     status: string;
     subject: string;
     message: string;
